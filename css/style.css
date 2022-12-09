@@ -343,6 +343,14 @@
         /* display: block; */
         opacity: 1;
     }
+
+    .menu-toggle-btn{
+        background-color: inherit;
+        border: none;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
  }
 
  @media (max-width: 530px) {
