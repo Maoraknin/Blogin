@@ -11,22 +11,44 @@
 
 
 <body class="main-layout">
-<div class="main-screen full" onclick="toggleMenu()"></div>
+<div class="main-screen full"></div>
 
     <header class="main-header full main-layout">
         <div class="header-container flex align-center space-between">
             <div class="logo">Blogin<span class="logo-dot">.</span></div>
             <nav class="main-nav">
                 <ul class="flex clean-list nav-list">
-                    <li><a href="#" id="journal">Journal</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="active nav-link journal-tab" onclick="toggleJournal()">Journal</a>
+                    <ul class="flex clean-list journal-list">
+                        <li><a class="journal-date" href="#">October 2016</a></li>
+                        <li><a class="journal-date" href="#">January 2017</a></li>
+                        <li><a class="journal-date" href="#">April 2017</a></li>
+                        <li><a class="journal-date" href="#">July 2017</a></li>
+                    </ul>
+                </li>
+                    <li><a class="nav-link" href="#">About</a></li>
+                    <li><a class="nav-link" href="#">Work</a></li>
+                    <li><a class="nav-link" href="#">Contact</a></li>
                 </ul>
             </nav>
             <button class="menu-toggle-btn" onclick="toggleMenu()">☰</button>
         </div>
     </header>
+
+    <div class="modal hidden">
+        <button onclick="toggleModal()" class="close-modal-btn">&#10005;</button>
+        <h1>Join us to get access to the latest stories!</h1>
+        <p class="card-text-p">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip
+            ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <form>
+        <label for="email">Email: </label>
+        <input type="email" id="email">
+        <button class="btn-round modal-btn">Submit</button>
+    </form>
+    </div>
+
+    
     <main class="main-content">
         <div class="card flex">
             <div class="img-container"><img src="img/001.png" class="card-image"></div>
@@ -34,10 +56,11 @@
                 <h2 class="card-title">Duis aute irure dolor in henderit in voluptate.</h2>
                 <p class="card-text-p">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip
-                    ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. <br> <br>
+                    ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur... </p>
-                <button onmouseover="onHoverBtn(this)" onmouseleave="onLeaveBtn(this)" class="card-btn">Continue Reading</button>
+                <button onclick="toggleModal()" class="card-btn btn-round continue-reading-btn">Continue Reading</button>
             </div>
 
         </div>
@@ -47,10 +70,11 @@
                 <h2 class="card-title">Duis aute irure dolor in henderit in voluptate.</h2>
                 <p class="card-text-p">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip
-                    ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. <br> <br>
+                    ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur... </p>
-                <button onmouseover="onHoverBtn(this)" onmouseleave="onLeaveBtn(this)" class="card-btn">Continue Reading</button>
+                <button onclick="toggleModal()" class="card-btn btn-round continue-reading-btn">Continue Reading</button>
             </div>
 
         </div>
@@ -60,10 +84,11 @@
                 <h2 class="card-title">Duis aute irure dolor in henderit in voluptate.</h2>
                 <p class="card-text-p">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                     aliquip
-                    ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. <br> <br>
+                    ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur... </p>
-                <button onmouseover="onHoverBtn(this)" onmouseleave="onLeaveBtn(this)" class="card-btn">Continue Reading</button>
+                <button onclick="toggleModal()" class="card-btn btn-round continue-reading-btn">Continue Reading</button>
             </div>
 
         </div>
@@ -73,31 +98,42 @@
             <a class="flex align-items space-between" href="#">next <img src="img/icons/next-arr.svg"></a>
         </div>
 
+
     </main>
+
+
+
 
     <footer class="main-layout-footer full">
         <div class="logo">Blogin<span class="logo-dot">.</span></div>
         <small>© 2014 Blogin.com - All Rights Reserved - Find more free Templates at <span>Pixelhint.com</span></small>
             <ul class="social-links clean-list flex align-items space-between">
-                <li class="facebook"><a href="#"><img src="img/icons/F.svg"></a></li>
-                <li><a href="#"><img src="img/icons/L.svg"></a></li>
-                <li><a href="#"><img src="img/icons/E.svg"></a></li>
-                <li><a href="#"><img src="img/icons/D.svg"></a></li>
+                <li><a href="#" class="fa facebook"></a></li>
+                <li><a href="#" class="fa twitter"></a></li>
+                <li><a href="#" class="fa behance"></a></li>
+                <li><a href="#" class="fa dribbble"></a></li>
             </ul>
     </footer>
 
 
     <script>
-        function onHoverBtn(elBtn) {
-            elBtn.innerHTML += ' ' + '<img src="img/icons/btn-arr.svg">'
-        }
-
-        function onLeaveBtn(elBtn){
-            elBtn.innerHTML = 'Continue Reading'
+      
+        
+        function toggleModal() {
+            if(document.body.classList.contains('menu-open')) return
+            document.querySelector('.modal').classList.toggle('hidden')
+            document.body.classList.toggle('modal-open')
+            document.querySelector('.main-screen').addEventListener('click',toggleModal)
         }
 
         function toggleMenu() {
             document.body.classList.toggle('menu-open')
+            document.querySelector('.main-screen').addEventListener('click',toggleMenu)
+        }
+        
+        function toggleJournal(){
+            if(window.innerWidth > 780) return
+            document.querySelector('.journal-list').classList.toggle('show')
         }
     </script>
 </body>
